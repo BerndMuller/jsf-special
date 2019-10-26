@@ -1,0 +1,52 @@
+<ui:composition 
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	template="/WEB-INF/templates/main.xhtml">
+
+	<ui:define name="header">Web-Components</ui:define>
+
+	<ui:define name="main">
+	
+		<h:outputStylesheet library="css" name="expanding-list.css" />
+
+		<div id="tree">
+		<ul is="expanding-list">
+			<li>UK
+				<ul>
+					<li>Yorkshire
+						<ul>
+							<li>Leeds
+								<ul>
+									<li>Train station</li>
+									<li>Town hall</li>
+									<li>Headrow</li>
+								</ul>
+							</li>
+							<li>Bradford</li>
+							<li>Hull</li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+			<li>USA
+				<ul>
+					<li>California
+						<ul>
+							<li>Los Angeles</li>
+							<li>San Francisco</li>
+							<li>Berkeley</li>
+						</ul>
+					</li>
+					<li>Nevada</li>
+					<li>Oregon</li>
+				</ul>
+			</li>
+		</ul>
+		</div>		
+
+		<h:outputScript library="js" name="expanding-list.js" target="body" />
+	</ui:define>
+
+</ui:composition>

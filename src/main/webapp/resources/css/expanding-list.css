@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+#tree ul {
+	list-style-type: none;
+}
+
+#tree ul li::before {
+	display: inline-block;
+	width: 1rem;
+	height: 1rem;
+	margin-right: 0.25rem;
+	content: "";
+}
+
+.open::before, .closed::before {
+	background-size: 1rem 1rem;
+	position: relative;
+	top: 0.25rem;
+	opacity: 0.3;
+}
+
+.open::before {
+	background-image: url('down.png.xhtml?ln=images');
+}
+
+.closed::before {
+	background-image: url('right.png.xhtml?ln=images');
+}
+
+.closed .closed::before, .closed .open::before {
+	display: none;
+}
