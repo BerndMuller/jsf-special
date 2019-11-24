@@ -18,7 +18,7 @@ Dann deployen Sie wie gewohnt auf Ihrem Java-EE-8-Application-Server
 
 Java-EE-8-Application-Server!
 
-Wir haben mit WildFly 15 unter Java 11 getestet. Payara unterstützt im Augenblick nur Java 8. 
+Wir haben mit WildFly 18 unter Java 13 getestet. 
 
 
 
