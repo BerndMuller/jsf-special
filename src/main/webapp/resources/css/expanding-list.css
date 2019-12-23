@@ -20,11 +20,13 @@
 }
 
 .open::before {
-	background-image: url('down.png.xhtml?ln=images');
+	transform: scale(1.5);
+	background-image: url('down.svg.xhtml?ln=images');
 }
 
 .closed::before {
-	background-image: url('right.png.xhtml?ln=images');
+	transform: scale(1.5);
+	background-image: url('right.svg.xhtml?ln=images');
 }
 
 .closed .closed::before, .closed .open::before {

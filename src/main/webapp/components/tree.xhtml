@@ -1,0 +1,20 @@
+<ui:composition 
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:jsfpraxis="http://jsfpraxis.de/component"
+	template="/WEB-INF/templates/main.xhtml">
+
+	<ui:define name="header">Native Komponenten</ui:define>
+
+	<ui:define name="main">
+
+		<h:panelGrid>
+			<f:facet name="header">Baumkomponente</f:facet>
+			<jsfpraxis:tree value="#{treeController.tree}" />
+		</h:panelGrid>
+		
+	</ui:define>
+
+</ui:composition>

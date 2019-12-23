@@ -27,7 +27,7 @@ public class Greeting extends UIComponentBase {
 	FacesContext facesContext;
 
 	public Greeting() {
-		//setRendererType(null);
+		//setRendererType(GreetingRenderer.RENDERER_TYPE);
 	}
 
 	@Override
