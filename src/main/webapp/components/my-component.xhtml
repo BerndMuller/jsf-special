@@ -5,13 +5,15 @@
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 	template="/WEB-INF/templates/main.xhtml">
 
-	<ui:define name="header">Web-Components</ui:define>
+	<ui:define name="header">Native Componenten</ui:define>
 
 	<ui:define name="main">
-
-		<!-- taken from https://css-tricks.com/an-introduction-to-web-components/ -->
-			
-		<my-component></my-component>
+	
+		<h:panelGrid>
+			<f:facet name="header">Einfache Web-Component</f:facet>
+			<!-- taken from https://css-tricks.com/an-introduction-to-web-components/ -->
+			<my-component />
+		</h:panelGrid>
 
 		<h:outputScript library="js" name="my-component.js" target="body" />
 		
