@@ -1,5 +1,7 @@
 package de.jsfpraxis.advanced.components;
 
+import java.util.logging.Logger;
+
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
 
@@ -13,22 +15,12 @@ import javax.inject.Named;
 @RequestScoped
 public class TreeController {
 	
+	private static final Logger logger = Logger.getLogger(TreeController.class.getCanonicalName());
+	
 	private TreeNode<String> root;
 	
 	public TreeController() {
-		//root = new TreeNode<>("1");
-		
-//		TreeNode<String> oneDotOne = new TreeNode<>("1.1");
-//		root.addChild(oneDotOne);
-//		TreeNode<String> oneDotOneDotOne = new TreeNode<>("1.1.1");
-//		TreeNode<String> oneDotOneDotTwo = new TreeNode<>("1.1.2");
-//		oneDotOne.addChild(oneDotOneDotOne);
-//		oneDotOne.addChild(oneDotOneDotTwo);
-//		TreeNode<String> oneDotTwo = new TreeNode<>("1.2");
-//		root.addChild(oneDotTwo);
-		
-		root = TreeExample.build(1, new TreeNode<>("1"));
-		System.out.println("counter: " + TreeExample.counter);
+		root = TreeExample.build();
 	}
 
 
@@ -56,7 +48,14 @@ public class TreeController {
 	static class TreeExample {
 		
 		private static final int TREE_HEIGHT = 7;
-		private static int counter = 0;
+		private static int counter;
+		
+		private static TreeNode<String> build() {
+			counter = 0;
+			TreeNode<String> tree = build(1, new TreeNode<>("1"));
+			logger.info("built tree with " + counter + " nodes");
+			return tree;
+		}
 		
 		private static TreeNode<String> build(int level, TreeNode<String> node) {
 			counter++;

@@ -21,6 +21,7 @@ import javax.inject.Inject;
 @ResourceDependency(library = "js", name = "expanding-list.js", target = "body")
 public class Tree extends UIComponentBase {
 	
+	@SuppressWarnings("unused")
 	private static final Logger logger = Logger.getLogger(Tree.class.getCanonicalName());
 	
 	public static final String COMPONENT_TYPE = "jsfpraxis.TreeComponent";
@@ -41,15 +42,8 @@ public class Tree extends UIComponentBase {
 	@Override
 	public void encodeEnd(FacesContext context) throws IOException {
 		ResponseWriter writer = context.getResponseWriter();
-
-		logger.info("family: " + this.getFamily());
-		logger.info("renderer type: " + this.getRendererType());
-		logger.info("renderer: " + this.getRenderer(facesContext));
-		logger.info("rendersChildren: " + this.getRendersChildren());
-		
 		@SuppressWarnings("unchecked")
 		TreeNode<String> root = (TreeNode<String>) getAttributes().get("value");
-		
 		writer.startElement("div", null);
 		writer.writeAttribute("id", "tree", null);
 		writer.write("<ul is=\"expanding-list\">");
