@@ -1,4 +1,4 @@
-package de.jsfpraxis.advanced.config;
+package de.jsfpraxis.special.config;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.faces.annotation.FacesConfig;

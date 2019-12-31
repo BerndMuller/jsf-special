@@ -1,4 +1,4 @@
-package de.jsfpraxis.advanced.websocket;
+package de.jsfpraxis.special.websocket;
 
 import java.time.LocalTime;
 

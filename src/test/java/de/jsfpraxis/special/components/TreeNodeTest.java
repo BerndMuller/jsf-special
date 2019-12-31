@@ -1,10 +1,12 @@
-package de.jsfpraxis.advanced.components;
+package de.jsfpraxis.special.components;
 
 import java.util.Set;
 import java.util.stream.Collectors;
 
 import org.junit.Assert;
 import org.junit.Test;
+
+import de.jsfpraxis.special.components.TreeNode;
 
 public class TreeNodeTest {
 

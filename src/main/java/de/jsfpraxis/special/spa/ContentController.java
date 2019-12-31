@@ -1,4 +1,4 @@
-package de.jsfpraxis.advanced.spa;
+package de.jsfpraxis.special.spa;
 
 import java.util.logging.Logger;
 

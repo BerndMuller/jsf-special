@@ -1,4 +1,4 @@
-package de.jsfpraxis.advanced.components;
+package de.jsfpraxis.special.components;
 
 import java.io.IOException;
 import java.util.logging.Logger;
