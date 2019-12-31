@@ -17,7 +17,7 @@ import javax.inject.Inject;
  *
  */
 @FacesComponent(value = Tree.COMPONENT_TYPE, tagName = "tree", createTag = true, namespace = "http://jsfpraxis.de/component")
-@ResourceDependency(library = "css", name = "expanding-list.css", target = "head")
+@ResourceDependency(library = "css", name = "expanding-list.css")
 @ResourceDependency(library = "js", name = "expanding-list.js", target = "body")
 public class Tree extends UIComponentBase {
 	
@@ -76,6 +76,5 @@ public class Tree extends UIComponentBase {
 		writer.write("</li>");
 	}
 
-	
 	
 }

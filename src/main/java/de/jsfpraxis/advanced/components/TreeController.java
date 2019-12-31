@@ -47,7 +47,7 @@ public class TreeController {
 	 */
 	static class TreeExample {
 		
-		private static final int TREE_HEIGHT = 7;
+		private static final int TREE_HEIGHT = 6;
 		private static int counter;
 		
 		private static TreeNode<String> build() {

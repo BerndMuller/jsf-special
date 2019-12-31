@@ -1,9 +1,7 @@
-// Create a class for the element
 class ExpandingList extends HTMLUListElement {
+	
   constructor() {
-    // Always call super first in constructor
     super();
-
     window.onload = function() {
       var tree = document.querySelector("#tree");
       const uls = Array.from(tree.querySelectorAll('ul'));
@@ -16,7 +14,6 @@ class ExpandingList extends HTMLUListElement {
       lis.forEach(li => {
         const childText = li.childNodes[0];
         const newSpan = document.createElement('span');
-
         newSpan.textContent = childText.textContent;
         childText.parentNode.insertBefore(newSpan, childText);
         childText.parentNode.removeChild(childText);
@@ -47,5 +44,4 @@ class ExpandingList extends HTMLUListElement {
   }
 }
 
-// Define the new element
 customElements.define('expanding-list', ExpandingList, { extends: 'ul' });
