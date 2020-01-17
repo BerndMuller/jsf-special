@@ -15,6 +15,14 @@
 	  	<li><a href="#{request.contextPath}/home.xhtml">Home</a></li>
 	  	
 	  	<li class="dropdown">
+  			<a href="#" class="dropbtn">JSF-Konfiguration</a>
+  			<div class="dropdown-content">
+  				<a href="#{externalContext.applicationContextPath}/jsfconfig/throw-arithmetic-exception.xhtml">Wirft ArithmeticException</a>
+  				<a href="#{externalContext.applicationContextPath}/jsfconfig/throw-array-index-out-of-bound-exception.xhtml">Wirft ArrayIndexOutOfBoundException</a>
+  			</div>
+  		</li>
+
+	  	<li class="dropdown">
   			<a href="#" class="dropbtn">Web-Sockets</a>
   			<div class="dropdown-content">
   				<a href="#{externalContext.applicationContextPath}/websocket/simple-timer.xhtml">Einfacher Timer</a>
@@ -43,7 +51,7 @@
   		</li>
 
 	  	<li class="dropdown">
-  			<a href="#" class="dropbtn">Konfiguration</a>
+  			<a href="#" class="dropbtn">Print/Web</a>
   			<div class="dropdown-content">
   				<h:commandLink action="#{printOrWebToggle.toggle}" value="Print/Web umschalten (nur für Screen-Shots)" immediate="true" />
   			</div>
