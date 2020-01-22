@@ -1,4 +1,4 @@
-package de.jsfpraxis.special.websocket;
+package de.jsfpraxis.special.websockets;
 
 import java.time.LocalTime;
 import java.util.Collection;
