@@ -9,17 +9,28 @@
 
 	<ui:define name="main">
 
-		<f:websocket channel="push">
-			<f:ajax event="updateTime" render="blub" />
+		<script type="text/javascript">
+			function showMessage(message, chanel, event) {
+				console.log(message);
+				var toAppend = message + " " + chanel + " " + event + "<br/>";
+				document.getElementById("board").innerHTML += toAppend;
+			}
+		</script>
+
+		<f:websocket channel="pushTime" onmessage="showMessage" >
+			<f:ajax event="updateTime" render="control" />
 		</f:websocket>
 
-		<h:panelGrid id="blub">
-			<h:outputText value="#{timePushController.localTime}" />
+		<h:panelGrid id="control">
+			<f:facet name="header">Einfacher Server-Push der Zeit</f:facet>
+			<h:outputText value="#{timePushController.serverTime}" />
 			<h:panelGroup>
 				<h:commandButton action="#{timePushController.startTimer}" value="Start Timer" />
 				<h:commandButton action="#{timePushController.stopTimer}" value="Stop Timer" />
 			</h:panelGroup>
 		</h:panelGrid>
+		
+		<div id="board"></div>
 
 	</ui:define>
 

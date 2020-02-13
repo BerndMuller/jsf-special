@@ -3,7 +3,7 @@
 mkdir -p target/META-INF/resources/css
 mkdir -p target/META-INF/resources/images
 mkdir -p target/META-INF/resources/js
-cp src/main/webapp/resources/st.css target/META-INF/resources/css/expanding-list.css
+cp src/main/webapp/resources/css/expanding-list.css target/META-INF/resources/css/expanding-list.css
 cp src/main/webapp/resources/js/expanding-list.js target/META-INF/resources/js/expanding-list.js
 cp src/main/webapp/resources/images/down.svg target/META-INF/resources/images/down.svg
 cp src/main/webapp/resources/images/right.svg target/META-INF/resources/images/right.svg

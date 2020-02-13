@@ -1,6 +1,7 @@
 package de.jsfpraxis.special.websockets;
 
 import java.time.LocalTime;
+import java.util.logging.Logger;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.event.Observes;
@@ -13,11 +14,14 @@ import javax.inject.Named;
 @ApplicationScoped
 public class TimePushController {
 	
-	private LocalTime localTime;
+	private LocalTime serverTime;
+	
+	@Inject
+	Logger logger;
 	
     @Inject 
     @Push
-    private PushContext push;
+    private PushContext pushTime;
     
     @Inject
     TimeEventGenerator timeEventGenerator;
@@ -26,9 +30,9 @@ public class TimePushController {
 	}
 
 	public void onTimeEvent(@Observes LocalTime localTime) {
-		System.out.println("event handler");
-    	this.localTime = localTime; 
-    	push.send("updateTime");
+		logger.info("onTimeEvent() called");
+    	this.serverTime = localTime; 
+    	pushTime.send("updateTime");
     }
 	
 	public void startTimer() {
@@ -41,8 +45,8 @@ public class TimePushController {
 
 	
 	// Getter und Setter
-	public LocalTime getLocalTime() {
-		return localTime;
+	public LocalTime getServerTime() {
+		return serverTime;
 	}
 
 }
