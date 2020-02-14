@@ -1,0 +1,37 @@
+<ui:composition 
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	template="/WEB-INF/templates/main.xhtml">
+
+	<ui:define name="header">Web-Sockets</ui:define>
+
+	<ui:define name="main">
+
+		<h:panelGrid columns="2">
+			<f:facet name="header">Versenden von Nachrichten</f:facet>
+			<h:panelGrid>
+				<h:outputText value="An alle" />
+				<h:panelGroup>
+					Message: <h:inputText value="#{messageDistributor.globalMessage}" />
+				</h:panelGroup>
+				<h:commandButton action="#{messageDistributor.distributeMessage}" value="Send to all" />
+			</h:panelGrid>
+
+			<h:panelGrid>
+				<h:panelGroup>
+					An User-Id: <h:inputText value="#{messageDistributor.userId}" />
+				</h:panelGroup>
+				<h:panelGroup>
+					Message: <h:inputText value="#{messageDistributor.userMessage}" />
+				</h:panelGroup>
+				<h:commandButton action="#{messageDistributor.sendMessageToUser}" value="Send to user" />
+			</h:panelGrid>
+
+
+		</h:panelGrid>
+
+	</ui:define>
+
+</ui:composition>

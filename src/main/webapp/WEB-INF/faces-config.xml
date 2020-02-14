@@ -8,11 +8,13 @@
 	<application>
 	</application>
 
+<!-- 
 	<factory>
 		<exception-handler-factory>
 			de.jsfpraxis.special.jsfconfig.DemoExceptionHandlerFactory
 		</exception-handler-factory>
 	</factory>
+ -->		 
 
 <!-- 
 	<faces-config-extension>

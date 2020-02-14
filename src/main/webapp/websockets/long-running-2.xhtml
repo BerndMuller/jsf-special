@@ -1,0 +1,42 @@
+<ui:composition 
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	template="/WEB-INF/templates/main.xhtml">
+
+	<ui:define name="header">Web-Sockets</ui:define>
+
+	<ui:define name="css">
+		.lds-dual-ring {
+			display: inline-block;
+  			width: 80px;
+  			height: 80px;
+		}
+		.lds-dual-ring:after {
+  			content: " ";
+  			display: block;
+  			width: 64px;
+  			height: 64px;
+  			margin: 8px;
+  			border-radius: 50%;
+  			border: 6px solid #fff;
+  			border-color: #000 transparent #000 transparent;
+  			animation: lds-dual-ring 1.2s linear infinite;
+		}
+		@keyframes lds-dual-ring {
+  			0% { transform: rotate(0deg); }
+  			100% { transform: rotate(360deg); }
+		}
+	</ui:define>
+	
+	<ui:define name="main">
+		<!-- https://loading.io/css/ -->
+		<h:panelGrid>
+			<f:facet name="header">Test</f:facet>
+			<div class="lds-dual-ring"></div>
+		</h:panelGrid>
+
+	</ui:define>
+
+</ui:composition>

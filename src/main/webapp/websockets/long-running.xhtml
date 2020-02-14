@@ -1,0 +1,69 @@
+<ui:composition 
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	template="/WEB-INF/templates/main.xhtml">
+
+	<ui:define name="header">Web-Sockets</ui:define>
+
+	<ui:define name="css">
+		#loading {
+			display: none;
+		}
+		#loading .bullet {
+  			margin-left: 0.2em;
+  			margin-right: 0.2em;
+  			font-size: 2em;
+			animation: showHideBullets 2.5s ease-in-out infinite;
+		}
+		#loading .bullet.one {
+			animation-delay: 0.2s;
+		}
+		#loading .bullet.two {
+			animation-delay: 0.4s;
+		}
+		#loading .bullet.three {
+			animation-delay: 0.6s;
+		}
+		@keyframes showHideBullets {
+	  		0% { opacity: 0; }
+  			50% { opacity: 1; }
+  			100% { opacity: 0; }
+		}
+	</ui:define>
+	
+	<ui:define name="main">
+
+		<script type="text/javascript">
+			function completed(message, chanel, event) {
+				console.log("message " + message);
+				document.getElementById("result").innerHTML = "Das Ergebnis: " + message;
+				document.getElementById("loading").style.display = "none";
+				jsf.push.close("form:running");
+			}
+			function start() {
+				document.getElementById("loading").style.display = "inline-block";
+				jsf.push.open("form:running");
+			}
+		</script>
+
+ 		<f:websocket id="running" channel="running" onmessage="completed" connected="false" /> 
+		
+		<h:panelGrid>
+			<f:facet name="header">Aufwendige Berechnungen</f:facet>
+			<h:commandButton action="#{longRunningController.callLongRunningService}" onclick="start()"
+				value="Starte und warte ..." style="width: 10em;">
+				<f:ajax  />
+			</h:commandButton>
+			<div id="loading">
+				<span class="bullet one">&#8226;</span>
+				<span class="bullet two">&#8226;</span>
+				<span class="bullet three">&#8226;</span>
+			</div>
+			<span id="result"></span>
+		</h:panelGrid>
+
+	</ui:define>
+
+</ui:composition>
