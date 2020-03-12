@@ -36,12 +36,10 @@ public class MessageDistributor {
     public void distributeMessage() {
     	logger.info("");
     	globalPushContext.send(globalMessage);
-
     }
 
     public void sendMessageToUser() {
     	userPushContext.send(userMessage, userId);
-
     }
 
     

@@ -33,7 +33,6 @@ public class LongRunningController implements Serializable {
 		logger.info("Beauftragung beendet.");
 	}
 
-	
 	private void completed(String result, Throwable throwable) {
 		logger.info("Aufwendige Berechnung terminiert. Ergebnis: " + result);
 		running.send(result);

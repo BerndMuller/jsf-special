@@ -16,5 +16,5 @@ public class LongRunningService {
 		}
         completableFuture.complete("Ganz aufwendig berechnetes Ergebnis!");
     }
-    
+
 }

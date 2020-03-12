@@ -10,14 +10,14 @@
 	<ui:define name="main">
 
 		<script type="text/javascript">
-			function showMessage(message, chanel, event) {
+			function showMessage(message, channel, event) {
 				console.log(message);
-				var toAppend = message + " " + chanel + " " + event + "<br/>";
+				var toAppend = message + " " + channel + " " + event + "<br/>";
 				document.getElementById("board").innerHTML += toAppend;
 			}
 		</script>
 
-		<f:websocket channel="pushTime" onmessage="showMessage" >
+		<f:websocket channel="pushTime" onmessage="showMessage">
 			<f:ajax event="updateTime" render="control" />
 		</f:websocket>
 
