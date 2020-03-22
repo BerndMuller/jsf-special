@@ -6,6 +6,14 @@
     version="2.3">
 
 	<application>
+<!-- 
+		<resource-library-contracts>
+			<contract-mapping>
+				<url-pattern>*</url-pattern>
+				<contracts>contracta</contracts>
+			</contract-mapping>
+		</resource-library-contracts>
+ -->		
 	</application>
 
 <!-- 
@@ -23,5 +31,7 @@
     		<process-as>xhtml</process-as>
   		</facelets-processing>
 	</faces-config-extension>
- -->		 
+ -->
+ 
+ 	
 </faces-config>

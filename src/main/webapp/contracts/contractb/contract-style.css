@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+/* geht mit Firefox, geht nicht mit Chrome */
+/* p#button { */
+/*   -webkit-appearance: button;  */
+/*   -moz-appearance: button; */
+/*   appearance: button; */
+/* } */
+
+p#button {
+	text-decoration: none;
+  	background-color: #E0FFFF;
+	border: 1px solid #111;
+	margin: 3px;
+	font-size: 0.9em;
+	padding: 2px 2px 2px 2px;
+	width: 10rem;
+}
+
+section div {
+	background-color: silver;
+}

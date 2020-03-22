@@ -1,0 +1,1 @@
+console.log("'contract-script.js from contracta loaded")

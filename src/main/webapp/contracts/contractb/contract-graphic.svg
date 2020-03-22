@@ -1,0 +1,6 @@
+<svg viewBox="0 0 90 20" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .text { font: italic bold 12px sans-serif; fill: red;}
+  </style>
+  <text x="5" y="19" class="text">Contract B</text>
+</svg>
