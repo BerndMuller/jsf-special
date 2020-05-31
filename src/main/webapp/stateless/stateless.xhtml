@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="de" 
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+	<h:head>
+		<title><ui:insert name="title">JavaServer Faces: Spezialthemen</ui:insert></title>
+		<link rel="icon" type="image/png" href="#{resource['icons/jsf-logo-no-text.png']}" />
+		<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<h:outputStylesheet library="css" name="main.css" />
+		<h:outputStylesheet library="css" name="menu.css" />
+	</h:head>
+
+	<h:body bgcolor="#ffffff">
+		<f:view transient="#{transientToggle.transient}">
+			<h:form id="form">
+				<ui:include src="/WEB-INF/templates/header.xhtml" />
+				<section>
+					<h:panelGrid id="grid">
+						<f:facet name="header">Stateless (transient) Views</f:facet>
+						<h:panelGroup>
+							<h:selectBooleanCheckbox value="#{statelessController.showInput1}">
+								<f:ajax execute="@this" render="grid" />
+							</h:selectBooleanCheckbox>
+							<h:inputText id="input1" value="#{statelessController.input1}" rendered="#{statelessController.showInput1}"/>
+						</h:panelGroup>
+						<h:panelGroup>
+							<h:selectBooleanCheckbox value="#{statelessController.showInput2}">
+								<f:ajax execute="@this" render="grid" listener="#{statelessController.toggleInput2}" />
+							</h:selectBooleanCheckbox>
+						</h:panelGroup>
+						<h:commandButton action="#{statelessController.stay}" value="Stay on View" />
+					</h:panelGrid>
+					
+					<section>
+						<h:commandButton action="#{transientToggle.toggle}" value="Toggle transient" />
+						&lt;f:view transient = &quot;#{facesContext.viewRoot.transient}&quot; &gt;
+					</section>
+
+				</section>
+				<ui:include src="/WEB-INF/templates/footer.xhtml" />
+			</h:form>
+		</f:view>	
+	</h:body>
+
+</html>
