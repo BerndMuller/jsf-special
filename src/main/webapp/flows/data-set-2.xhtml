@@ -1,0 +1,24 @@
+<ui:composition 
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	template="/WEB-INF/templates/main.xhtml">
+
+	<ui:define name="header">Faces-Flows</ui:define>
+
+	<ui:define name="main">
+
+		<h:panelGrid>
+			<f:facet name="header">Data Set 2</f:facet>
+			Data Set (2/3): <h:inputText value="#{wizardData.data2}" />
+			<h:panelGroup>
+				<h:commandButton action="toDataSet1" value="Zurück" />
+				<h:commandButton action="toDataSet3" value="Weiter" />
+				<h:commandButton action="abort" value="Abbrechen" />
+			</h:panelGroup>
+		</h:panelGrid>
+		<ui:include src="flow-info.xhtml" />
+	</ui:define>
+
+</ui:composition>

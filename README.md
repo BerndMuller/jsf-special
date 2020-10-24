@@ -18,7 +18,7 @@ Dann deployen Sie wie gewohnt auf Ihrem Java-EE-8-Application-Server
 
 Java-EE-8-Application-Server!
 
-Wir haben mit WildFly 18 unter Java 13 getestet. 
+Wir haben mit WildFly 21 unter Java 15 getestet. 
 
 
 

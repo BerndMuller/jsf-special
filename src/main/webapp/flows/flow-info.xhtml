@@ -1,0 +1,12 @@
+<ui:component xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+	currentFlowScope: #{facesContext.application.flowHandler.currentFlowScope} <br />
+
+	flowScope.someKey: #{empty facesContext.application.flowHandler.currentFlowScope ? 'leer' : flowScope.someKey} <br />
+
+	in flow: #{not empty facesContext.application.flowHandler.currentFlow} <br />
+	 
+	currentFlow.id: #{facesContext.application.flowHandler.currentFlow.id}
+
+</ui:component>
