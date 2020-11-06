@@ -27,9 +27,6 @@ public class WizardData implements Serializable {
 	Map<Object, Object> currentFlowScope;
 	
 	@Inject
-	FacesContext facesContext;
-	
-	@Inject
 	UIViewRoot viewRoot;
 	
 	public WizardData() {
